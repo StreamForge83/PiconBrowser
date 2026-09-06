@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<setupxml>
+	<setup key="PiconBrowser" title="Picon Browser Settings">
+		<item level="0" text="Sync on startup" description="Automatically sync picons once when the box starts.">config.plugins.PiconBrowser.enabled</item>
+		<item level="0" text="Exclude IPTV" description="Exclude IPTV services from the channel list used to determine which picons are needed.">config.plugins.PiconBrowser.excludeIptv</item>
+		<item level="0" text="Exclude Radio" description="Exclude radio services from the channel list used to determine which picons are needed.">config.plugins.PiconBrowser.excludeRadio</item>
+		<item level="0" text="Picon repo for path %s" description="Select the picon repo to download into Picon path %s (see Picon Settings)." data="1">config.plugins.PiconBrowser.sets0.repo</item>
+		<item level="0" text="Picon path" description="Local directory the picons are downloaded to (Single-path mode)." conditional="config.picon.mode.value == 0">config.picon.set0.path</item>
+		<item level="0" text="Picon repo for path %s" description="Select the picon repo to download into Picon path %s (see Picon Settings)." data="2" conditional="config.picon.mode.value == 1 and config.picon.set1.path.value">config.plugins.PiconBrowser.sets1.repo</item>
+		<item level="0" text="Picon repo for path %s" description="Select the picon repo to download into Picon path %s (see Picon Settings)." data="3" conditional="config.picon.mode.value == 1 and config.picon.set2.path.value">config.plugins.PiconBrowser.sets2.repo</item>
+		<item level="0" text="Picon repo for path %s" description="Select the picon repo to download into Picon path %s (see Picon Settings)." data="4" conditional="config.picon.mode.value == 1 and config.picon.set3.path.value">config.plugins.PiconBrowser.sets3.repo</item>
+	</setup>
+</setupxml>

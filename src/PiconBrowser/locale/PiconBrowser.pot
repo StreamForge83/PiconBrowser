@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PiconBrowser package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PiconBrowser\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-07-15 11:13+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../plugin.py:93
+msgid "Add Path"
+msgstr ""
+
+#: ../plugin.py:59
+msgid "Add a picon path"
+msgstr ""
+
+#: ../setup.xml
+msgid "Automatically sync picons once when the box starts."
+msgstr ""
+
+#: ../setup.xml
+msgid "Exclude IPTV"
+msgstr ""
+
+#: ../setup.xml
+msgid "Exclude IPTV services from the channel list used to determine which picons are needed."
+msgstr ""
+
+#: ../setup.xml
+msgid "Exclude Radio"
+msgstr ""
+
+#: ../setup.xml
+msgid "Exclude radio services from the channel list used to determine which picons are needed."
+msgstr ""
+
+#: ../setup.xml
+msgid "Local directory the picons are downloaded to."
+msgstr ""
+
+#: ../setup.xml
+msgid "Picon Browser Settings"
+msgstr ""
+
+#: ../plugin.py:279
+msgid "Picon Browser Sync"
+msgstr ""
+
+#: ../setup.xml
+msgid "Picon path %s"
+msgstr ""
+
+#: ../setup.xml
+msgid "Picon repo %s"
+msgstr ""
+
+#: ../plugin.py:361
+msgid "PiconBrowser description"
+msgstr ""
+
+#: ../plugin.py:94
+msgid "Remove Path"
+msgstr ""
+
+#: ../plugin.py:60
+msgid "Remove the last picon path"
+msgstr ""
+
+#: ../plugin.py:114
+msgid "Select Picon Directory"
+msgstr ""
+
+#: ../setup.xml
+msgid "Select the picon repo to download from."
+msgstr ""
+
+#: ../setup.xml
+msgid "Sync on startup"
+msgstr ""
+
+#: ../plugin.py:115
+msgid "What do you want to set as the picon location?"
+msgstr ""
