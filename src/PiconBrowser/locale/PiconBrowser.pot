@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PiconBrowser\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 11:13+0200\n"
+"POT-Creation-Date: 2026-09-08 21:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,16 +17,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../plugin.py:93
-msgid "Add Path"
+#: ../plugin.py:91
+msgid "A picon sync is already running."
 msgstr ""
 
-#: ../plugin.py:59
-msgid "Add a picon path"
-msgstr ""
-
-#: ../setup.xml
-msgid "Automatically sync picons once when the box starts."
+#: ../plugin.py:152 ../plugin.py:153
+msgid "Close the preview"
 msgstr ""
 
 #: ../setup.xml
@@ -46,49 +42,69 @@ msgid "Exclude radio services from the channel list used to determine which pico
 msgstr ""
 
 #: ../setup.xml
-msgid "Local directory the picons are downloaded to."
+msgid "Local directory the picons are downloaded to (Single-path mode)."
 msgstr ""
 
 #: ../setup.xml
 msgid "Picon Browser Settings"
 msgstr ""
 
-#: ../plugin.py:279
+#: ../plugin.py:331
 msgid "Picon Browser Sync"
 msgstr ""
 
 #: ../setup.xml
-msgid "Picon path %s"
+msgid "Picon path"
 msgstr ""
 
 #: ../setup.xml
-msgid "Picon repo %s"
+msgid "Picon repo for path %s"
 msgstr ""
 
-#: ../plugin.py:361
+#: ../plugin.py:93
+msgid "Picon sync started in the background."
+msgstr ""
+
+#: ../plugin.py:413
 msgid "PiconBrowser description"
 msgstr ""
 
-#: ../plugin.py:94
-msgid "Remove Path"
+#: ../setup.xml
+msgid "Scheduled sync"
 msgstr ""
 
-#: ../plugin.py:60
-msgid "Remove the last picon path"
-msgstr ""
-
-#: ../plugin.py:114
+#: ../plugin.py:110
 msgid "Select Picon Directory"
 msgstr ""
 
 #: ../setup.xml
-msgid "Select the picon repo to download from."
+msgid "Select the picon repo to download into Picon path %s (see Picon Settings)."
+msgstr ""
+
+#: ../plugin.py:76
+msgid "Show a preview image for each picon repo"
+msgstr ""
+
+#: ../plugin.py:151
+msgid "Show the next repo's preview"
+msgstr ""
+
+#: ../plugin.py:150
+msgid "Show the previous repo's preview"
+msgstr ""
+
+#: ../plugin.py:79
+msgid "Start a manual picon sync now"
+msgstr ""
+
+#: ../plugin.py:74
+msgid "Sync now"
 msgstr ""
 
 #: ../setup.xml
-msgid "Sync on startup"
+msgid "This plugin does not sync automatically. Add a 'Picon Browser Sync' task in the Scheduler plugin to run the sync periodically."
 msgstr ""
 
-#: ../plugin.py:115
+#: ../plugin.py:111
 msgid "What do you want to set as the picon location?"
 msgstr ""

@@ -14,6 +14,7 @@ from Components.ActionMap import HelpableActionMap
 from Components.config import config, ConfigSelection, ConfigSubsection, ConfigYesNo
 from Components.Label import Label
 from Components.Pixmap import Pixmap
+from Components.Sources.StaticText import StaticText
 from Plugins.Plugin import PluginDescriptor
 from Screens.LocationBox import LocationBox
 from Screens.Screen import Screen
@@ -38,13 +39,15 @@ REPOS = {
 	"400-dark-transparent": "https://piconbrowser.github.io/400-dark-transparent",
 }
 
-# TODO: filename of the preview image inside each repo (e.g. "preview.png"), served at
-# f"{repoUrl}/{PREVIEW_IMAGE_NAME}". Left unset until the actual name/path is provided.
-PREVIEW_IMAGE_NAME = None
+# The repos don't publish a dedicated preview image, so a channel picon that's present in
+# every repo is used as a style sample instead.
+PREVIEW_IMAGE_NAME = "prosieben.png"
 PREVIEW_TMP_PATH = "/tmp/piconbrowser_preview.png"
 
 config.plugins.PiconBrowser = ConfigSubsection()
-config.plugins.PiconBrowser.enabled = ConfigYesNo(default=False)
+# Read-only placeholder (single blank choice) for the setup entry that explains the
+# Scheduler needs a task to run the sync - Setup's addItem() drops ConfigNothing items.
+config.plugins.PiconBrowser.schedulerInfo = ConfigSelection(default="", choices=[("", "")])
 config.plugins.PiconBrowser.excludeIptv = ConfigYesNo(default=True)
 config.plugins.PiconBrowser.excludeRadio = ConfigYesNo(default=False)
 for index in range(MAX_SETS):
@@ -68,8 +71,12 @@ def getActivePiconPaths():
 class PiconBrowserSetup(Setup):
 	def __init__(self, session):
 		Setup.__init__(self, session, "PiconBrowser", plugin="Extensions/PiconBrowser", PluginLanguageDomain=PluginLanguageDomain)
+		self["key_blue"] = StaticText(_("Sync now"))
 		self["infoActions"] = HelpableActionMap(self, ["InfoActions"], {
 			"info": (self.showPreview, _("Show a preview image for each picon repo")),
+		}, prio=0)
+		self["colorActions"] = HelpableActionMap(self, ["ColorActions"], {
+			"blue": (self.startManualSync, _("Start a manual picon sync now")),
 		}, prio=0)
 
 	def keySave(self):
@@ -78,6 +85,12 @@ class PiconBrowserSetup(Setup):
 
 	def showPreview(self):
 		self.session.open(PiconBrowserPreview)
+
+	def startManualSync(self):
+		if not PiconBrowser.instance.download():
+			self.session.showError(_("A picon sync is already running."))
+		else:
+			self.session.showInfo(_("Picon sync started in the background."))
 
 	def keySelect(self):
 		if self.getCurrentItem() is config.picon.set0.path:
@@ -317,22 +330,22 @@ class PiconBrowser:
 		from Scheduler import addFunctionTimer
 		addFunctionTimer(SCHEDULER_TIMER_KEY, _("Picon Browser Sync"), self._schedulerRun, self._schedulerCancel, useOwnThread=True)
 
-	def start(self):
-		if not config.plugins.PiconBrowser.enabled.value:
-			return
-		self.download()
-
 	def stop(self):
 		self._schedulerCancel()
 
 	def download(self):
-		deferred = self._syncAll()
-		deferred.addCallback(self._downloadDone).addErrback(self._downloadFailed)
-		return deferred
+		if self._runningSync and not self._runningSync.called:
+			return None
+		self._runningSync = self._syncAll()
+		self._runningSync.addCallback(self._downloadDone).addErrback(self._downloadFailed)
+		return self._runningSync
 
 	def _schedulerRun(self, callback, timerEntry):
-		self._runningSync = self.download()
-		self._runningSync.addCallbacks(lambda _: callback(True), lambda _: callback(False))
+		deferred = self.download()
+		if deferred:
+			deferred.addCallbacks(lambda _: callback(True), lambda _: callback(False))
+		else:
+			callback(False)
 
 	def _schedulerCancel(self):
 		if self._runningSync and not self._runningSync.called:
@@ -380,8 +393,7 @@ class PiconBrowser:
 
 def autostart(reason, session=None, **kwargs):
 	if reason == 0 and session is not None:
-		plugin = PiconBrowser(session)
-		plugin.start()
+		PiconBrowser(session)
 	elif reason == 1:
 		if PiconBrowser.instance:
 			PiconBrowser.instance.shutdown()

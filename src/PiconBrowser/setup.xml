@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <setupxml>
 	<setup key="PiconBrowser" title="Picon Browser Settings">
-		<item level="0" text="Sync on startup" description="Automatically sync picons once when the box starts.">config.plugins.PiconBrowser.enabled</item>
+		<item level="0" text="Scheduled sync" description="This plugin does not sync automatically. Add a 'Picon Browser Sync' task in the Scheduler plugin to run the sync periodically.">config.plugins.PiconBrowser.schedulerInfo</item>
 		<item level="0" text="Exclude IPTV" description="Exclude IPTV services from the channel list used to determine which picons are needed.">config.plugins.PiconBrowser.excludeIptv</item>
 		<item level="0" text="Exclude Radio" description="Exclude radio services from the channel list used to determine which picons are needed.">config.plugins.PiconBrowser.excludeRadio</item>
 		<item level="0" text="Picon repo for path %s" description="Select the picon repo to download into Picon path %s (see Picon Settings)." data="1">config.plugins.PiconBrowser.sets0.repo</item>

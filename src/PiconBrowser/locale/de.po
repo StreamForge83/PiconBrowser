@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 11:13+0200\n"
+"POT-Creation-Date: 2026-09-08 21:54+0200\n"
 "PO-Revision-Date: 2023-08-04 14:25+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,18 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: ../plugin.py:93
-msgid "Add Path"
-msgstr ""
+#: ../plugin.py:91
+msgid "A picon sync is already running."
+msgstr "Ein Picon-Abgleich läuft bereits."
 
-#: ../plugin.py:59
-#, fuzzy
-msgid "Add a picon path"
-msgstr "Picon-Pfad"
-
-#: ../setup.xml
-msgid "Automatically sync picons once when the box starts."
-msgstr ""
+#: ../plugin.py:152 ../plugin.py:153
+msgid "Close the preview"
+msgstr "Vorschau schließen"
 
 #: ../setup.xml
 msgid "Exclude IPTV"
@@ -48,52 +43,69 @@ msgid "Exclude radio services from the channel list used to determine which pico
 msgstr "Radiosender aus der Senderliste ausschließen, die zur Ermittlung der benötigten Picons verwendet wird."
 
 #: ../setup.xml
-msgid "Local directory the picons are downloaded to."
-msgstr "Lokales Verzeichnis, in das die Picons heruntergeladen werden."
+msgid "Local directory the picons are downloaded to (Single-path mode)."
+msgstr "Lokales Verzeichnis, in das die Picons heruntergeladen werden (Einzelpfad-Modus)."
 
 #: ../setup.xml
 msgid "Picon Browser Settings"
 msgstr "Picon Browser Einstellungen"
 
-#: ../plugin.py:279
-#, fuzzy
+#: ../plugin.py:331
 msgid "Picon Browser Sync"
-msgstr "Picon Browser Einstellungen"
+msgstr "Picon Browser Abgleich"
 
 #: ../setup.xml
-#, fuzzy
-msgid "Picon path %s"
+msgid "Picon path"
 msgstr "Picon-Pfad"
 
 #: ../setup.xml
-#, fuzzy
-msgid "Picon repo %s"
-msgstr "Picon-Repo"
+msgid "Picon repo for path %s"
+msgstr "Picon-Repo für Pfad %s"
 
-#: ../plugin.py:361
+#: ../plugin.py:93
+msgid "Picon sync started in the background."
+msgstr "Picon-Abgleich wurde im Hintergrund gestartet."
+
+#: ../plugin.py:413
 msgid "PiconBrowser description"
 msgstr ""
 
-#: ../plugin.py:94
-msgid "Remove Path"
-msgstr ""
+#: ../setup.xml
+msgid "Scheduled sync"
+msgstr "Geplanter Abgleich"
 
-#: ../plugin.py:60
-msgid "Remove the last picon path"
-msgstr ""
-
-#: ../plugin.py:114
+#: ../plugin.py:110
 msgid "Select Picon Directory"
-msgstr ""
+msgstr "Picon-Verzeichnis auswählen"
 
 #: ../setup.xml
-msgid "Select the picon repo to download from."
-msgstr "Picon-Repo auswählen, von dem heruntergeladen werden soll."
+msgid "Select the picon repo to download into Picon path %s (see Picon Settings)."
+msgstr "Picon-Repo auswählen, das in Picon-Pfad %s heruntergeladen werden soll (siehe Picon-Einstellungen)."
+
+#: ../plugin.py:76
+msgid "Show a preview image for each picon repo"
+msgstr "Vorschaubild für jedes Picon-Repo anzeigen"
+
+#: ../plugin.py:151
+msgid "Show the next repo's preview"
+msgstr "Vorschau des nächsten Repos anzeigen"
+
+#: ../plugin.py:150
+msgid "Show the previous repo's preview"
+msgstr "Vorschau des vorherigen Repos anzeigen"
+
+#: ../plugin.py:79
+msgid "Start a manual picon sync now"
+msgstr "Jetzt einen manuellen Picon-Abgleich starten"
+
+#: ../plugin.py:74
+msgid "Sync now"
+msgstr "Jetzt abgleichen"
 
 #: ../setup.xml
-msgid "Sync on startup"
-msgstr ""
+msgid "This plugin does not sync automatically. Add a 'Picon Browser Sync' task in the Scheduler plugin to run the sync periodically."
+msgstr "Dieses Plugin gleicht nicht automatisch ab. Fügen Sie im Scheduler-Plugin eine Aufgabe „Picon Browser Abgleich“ hinzu, um den Abgleich regelmäßig auszuführen."
 
-#: ../plugin.py:115
+#: ../plugin.py:111
 msgid "What do you want to set as the picon location?"
-msgstr ""
+msgstr "Was möchten Sie als Picon-Speicherort festlegen?"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-07-15 11:13+0200\n"
+"POT-Creation-Date: 2026-09-08 21:54+0200\n"
 "PO-Revision-Date: 2022-11-04 18:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: Italian <>\n"
@@ -18,17 +18,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.08.2\n"
 
-#: ../plugin.py:93
-msgid "Add Path"
-msgstr ""
+#: ../plugin.py:91
+msgid "A picon sync is already running."
+msgstr "Una sincronizzazione dei picon è già in corso."
 
-#: ../plugin.py:59
-msgid "Add a picon path"
-msgstr ""
-
-#: ../setup.xml
-msgid "Automatically sync picons once when the box starts."
-msgstr ""
+#: ../plugin.py:152 ../plugin.py:153
+msgid "Close the preview"
+msgstr "Chiudi l'anteprima"
 
 #: ../setup.xml
 msgid "Exclude IPTV"
@@ -47,49 +43,69 @@ msgid "Exclude radio services from the channel list used to determine which pico
 msgstr ""
 
 #: ../setup.xml
-msgid "Local directory the picons are downloaded to."
-msgstr ""
+msgid "Local directory the picons are downloaded to (Single-path mode)."
+msgstr "Cartella locale in cui vengono scaricati i picon (modalità percorso singolo)."
 
 #: ../setup.xml
 msgid "Picon Browser Settings"
-msgstr ""
+msgstr "Impostazioni Picon Browser"
 
-#: ../plugin.py:279
+#: ../plugin.py:331
 msgid "Picon Browser Sync"
-msgstr ""
+msgstr "Sincronizzazione Picon Browser"
 
 #: ../setup.xml
-msgid "Picon path %s"
-msgstr ""
+msgid "Picon path"
+msgstr "Percorso Picon"
 
 #: ../setup.xml
-msgid "Picon repo %s"
-msgstr ""
+msgid "Picon repo for path %s"
+msgstr "Repo Picon per il percorso %s"
 
-#: ../plugin.py:361
+#: ../plugin.py:93
+msgid "Picon sync started in the background."
+msgstr "Sincronizzazione picon avviata in background."
+
+#: ../plugin.py:413
 msgid "PiconBrowser description"
 msgstr ""
 
-#: ../plugin.py:94
-msgid "Remove Path"
-msgstr ""
+#: ../setup.xml
+msgid "Scheduled sync"
+msgstr "Sincronizzazione pianificata"
 
-#: ../plugin.py:60
-msgid "Remove the last picon path"
-msgstr ""
-
-#: ../plugin.py:114
+#: ../plugin.py:110
 msgid "Select Picon Directory"
-msgstr ""
+msgstr "Seleziona cartella Picon"
 
 #: ../setup.xml
-msgid "Select the picon repo to download from."
-msgstr ""
+msgid "Select the picon repo to download into Picon path %s (see Picon Settings)."
+msgstr "Seleziona il repo picon da scaricare nel percorso Picon %s (vedi Impostazioni Picon)."
+
+#: ../plugin.py:76
+msgid "Show a preview image for each picon repo"
+msgstr "Mostra un'immagine di anteprima per ogni repo picon"
+
+#: ../plugin.py:151
+msgid "Show the next repo's preview"
+msgstr "Mostra l'anteprima del repo successivo"
+
+#: ../plugin.py:150
+msgid "Show the previous repo's preview"
+msgstr "Mostra l'anteprima del repo precedente"
+
+#: ../plugin.py:79
+msgid "Start a manual picon sync now"
+msgstr "Avvia ora una sincronizzazione manuale dei picon"
+
+#: ../plugin.py:74
+msgid "Sync now"
+msgstr "Sincronizza ora"
 
 #: ../setup.xml
-msgid "Sync on startup"
-msgstr ""
+msgid "This plugin does not sync automatically. Add a 'Picon Browser Sync' task in the Scheduler plugin to run the sync periodically."
+msgstr "Questo plugin non si sincronizza automaticamente. Aggiungi un'attività 'Sincronizzazione Picon Browser' nel plugin Scheduler per eseguire la sincronizzazione periodicamente."
 
-#: ../plugin.py:115
+#: ../plugin.py:111
 msgid "What do you want to set as the picon location?"
-msgstr ""
+msgstr "Cosa vuoi impostare come posizione dei picon?"
